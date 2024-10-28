@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Proyectos</title>
+    <style>
+       * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+       }
+       body {
+            background-color: silver;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centrar todo el contenido horizontalmente */
+            min-height: 100vh; /* Para asegurar que el footer esté abajo */
+        }
+        h1 {
+            background-color: rgba(0, 0, 0, 0.313);
+            padding: 2rem;
+            text-align: center;
+            color: white;
+            text-decoration: underline;
+            font-style: italic;
+            font-weight: normal;
+            width: 80%; /* Mismo ancho que el contenedor */
+            margin: 2rem 0; /* Añadir espacio encima y debajo */
+        }
+        #contenedor {
+            background-image: url('fondo.jpg'); /* Ruta correcta de la imagen */
+            background-size: cover; /* La imagen cubrirá todo el contenedor */
+            background-position: center; /* La imagen estará centrada */
+            background-repeat: no-repeat; /* No repetir la imagen */
+            width: 80%; /* Tamaño del contenedor */
+            height: 80vh; /* Altura del contenedor en base a la ventana */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid black;
+        }
+        table {
+            border-collapse: collapse; /* Para quitar los espacios entre bordes */
+            text-align: center;
+            background-color: white;
+            padding: 1rem;
+            border-radius: 10px;
+        }
+        td {
+            padding: 1rem;
+            border: 1px solid black;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+            font-size: 1.2rem;
+        }
+        a:hover {
+            color: blue;
+        }
+        footer {
+            background-color: #666;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            width: 80%; /* Mismo ancho que el contenedor */
+            margin-top: 2rem; /* Añadir espacio encima */
+        }
+    </style>
+</head>
+<body>
+    <h1>Menu de Proyectos de Front End</h1>
+
+    <!-- Contenedor que envuelve el contenido -->
+    <div id="contenedor">
+        <table>
+            <tr>
+                <td><a href="calculosJS/index.html" target="_blank">Calculos JS</a></td>
+            </tr>
+            <tr>
+                <td><a href="menu_horizontal_css/index.html" target="_blank">Menu Horizontal</a></td>
+            </tr>
+            <tr>
+                <td><a href="proyectoWEB/index.html" target="_blank">Proyecto WEB</a></td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        .::Creado Por Pablo 2024::.
+    </footer>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Área</title>
+    <link rel="stylesheet" href="estilos.css"> 
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de Area</h1>
+        <label for="shape">Selecciona la figura:</label>
+        <select id="shape" onchange="updateForm()">
+            <option value="square">Cuadrado</option>
+            <option value="rectangle">Rectángulo</option>
+            <option value="triangle">Triángulo</option>
+            <option value="circle">Círculo</option>
+        </select>
+
+        <div id="form">
+        </div>
+
+        <button onclick="calculateArea()">Calcular Área</button>
+
+        <div id="result">
+            <h2>Área: <span id="area">0</span></h2>
+        </div>
+
+        <div id="shape-image">
+            
+        </div>
+    </div>
+
+    <script>
+        function updateForm() {
+            const shape = document.getElementById("shape").value;
+            const form = document.getElementById("form");
+            const shapeImage = document.getElementById("shape-image");
+            form.innerHTML = "";
+            shapeImage.innerHTML = "";
+
+            switch (shape) {
+                case "square":
+                    form.innerHTML = '<label>Lado:</label><input type="number" id="side" placeholder="Lado">';
+                    shapeImage.innerHTML = '<img src="imagenes/cuadrado.png" alt="Cuadrado">';
+                    break;
+                case "rectangle":
+                    form.innerHTML = '<label>Base:</label><input type="number" id="base" placeholder="Base"><br><label>Altura:</label><input type="number" id="height" placeholder="Altura">';
+                    shapeImage.innerHTML = '<img src="imagenes/rectangulo.png" alt="Rectángulo">';
+                    break;
+                case "triangle":
+                    form.innerHTML = '<label>Base:</label><input type="number" id="base" placeholder="Base"><br><label>Altura:</label><input type="number" id="height" placeholder="Altura">';
+                    shapeImage.innerHTML = '<img src="imagenes/triangulo.png" alt="Triángulo">';
+                    break;
+                case "circle":
+                    form.innerHTML = '<label>Radio:</label><input type="number" id="radius" placeholder="Radio">';
+                    shapeImage.innerHTML = '<img src="imagenes/circulo.png" alt="Círculo">';
+                    break;
+            }
+        }
+
+        function calculateArea() {
+            const shape = document.getElementById("shape").value;
+            let area = 0;
+
+            switch (shape) {
+                case "square":
+                    const side = parseFloat(document.getElementById("side").value);
+                    area = side * side;
+                    break;
+                case "rectangle":
+                    const base = parseFloat(document.getElementById("base").value);
+                    const height = parseFloat(document.getElementById("height").value);
+                    area = base * height;
+                    break;
+                case "triangle":
+                    const baseTri = parseFloat(document.getElementById("base").value);
+                    const heightTri = parseFloat(document.getElementById("height").value);
+                    area = (baseTri * heightTri) / 2;
+                    break;
+                case "circle":
+                    const radius = parseFloat(document.getElementById("radius").value);
+                    area = Math.PI * radius * radius;
+                    break;
+            }
+
+            document.getElementById("area").textContent = area.toFixed(2);
+        }
+
+        window.onload = updateForm;
+    </script>
+</body>
+</html>
